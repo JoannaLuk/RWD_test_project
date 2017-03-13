@@ -6,14 +6,14 @@ var slides = $("#slideshow > div");
 var span = $(".container_slider > div");
 $("#slideshow > div:gt(0)").hide();
 
-setInterval(function() { 
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-},  3000);
+// setInterval(function() { 
+//   $('#slideshow > div:first')
+//     .fadeOut(1000)
+//     .next()
+//     .fadeIn(1000)
+//     .end()
+//     .appendTo('#slideshow');
+// },  3000);
 
 
 console.log(slides,span);
@@ -24,13 +24,18 @@ console.log(slides,span);
 var menu_icon = $('.fa-bars');
 var list = $('.nav ul li');
 console.log(menu_icon, list);
-
+list.hide();
 	menu_icon.on('click', function(){
 		if(list.css('display') === 'none') {
-			list.css('display', 'block')
+			list.show()
 		} else
- 			list.css('display', 'none');
+ 			list.hide();
  	});
+
+
+
+
+
 
 // Scroll to
 var menu = $('.menu');
@@ -53,13 +58,13 @@ var link = menu.find('a')
 	$(window).on('scroll', function(){
 		var scroll = $(document).scrollTop();
 		if(offset < scroll){
+			list.show();
 			menu_list.addClass('sticky');
 		} else {
+			list.hide();
 			menu_list.removeClass('sticky');
 		};
 	});
-
-
 
 
 })
