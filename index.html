@@ -9,22 +9,24 @@
 </head>
 <body>
 <!-- Slider and navigation -->
-	<header class="header">
+	<header id="home" class="header">
 		<!-- Slider -->
 		<section class="slider">
-			<div class="slide_1">
-				<div class="container_slider">
-					<h2>Feel the Power of Typography</h2>
+			<div class="slider" id="slideshow">
+				<div class="slide_1">
+					<div class="container_slider">
+						<h2>Feel the Power of Typography</h2>
+					</div>
 				</div>
-			</div>
-			<div class="slide_2">
-				<div class="container_slider">
-					<h2>Feel the Power of RWD</h2>
+				<div class="slide_2">
+					<div class="container_slider">
+						<h2>Feel the Power of RWD</h2>
+					</div>
 				</div>
-			</div>
-			<div class="slide_3">
-				<div class="container_slider">
-					<h2>Feel the Power of Design UX Design</h2>
+				<div class="slide_3">
+					<div class="container_slider">
+						<h2>Feel the Power of Design UX Design</h2>
+					</div>
 				</div>
 			</div>
 			<div class="options container_slider">
@@ -49,39 +51,40 @@
 					<img src="images/logo.png" class="logo">
 				</figure>
 				<i class="fa fa-bars"></i>
+				</div>
 				<ul class="menu">
 					<li>
-						<a href="#">
+						<a href="#home">
 							Home
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="#box_text_section">
 							Menu 2
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="#images">
 							Menu 3
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="#b&w">
 							Menu 4
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="#list">
 							Menu 5
 						</a>
 					</li>
 				</ul>
-			</div>
+			<!-- </div> -->
 		</nav>
 	</header>
 
 	<!-- Text section -->
-	<section class="box_text_section">
+	<section id="box_text_section" class="box_text_section">
 		<div class="container">
 			<div class="box text1">
 				<h4>Text form box name 1</h4>
@@ -117,7 +120,7 @@
 	</section>
 
 	<!-- Section images -->
-	<section class="images_section">
+	<section id="images" class="images_section">
 
 		<!-- Small images -->
 		<div class="container clearfix">
@@ -136,7 +139,7 @@
 		</div>
 
 		<!-- Black & white images -->
-		<div class="container">
+		<div id="b&w" class="container">
 			<div class="medium_box1">
 				<div class="triangle"></div>
 				<span>&lsaquo;&lsaquo;</span>
@@ -147,7 +150,7 @@
 			</div>
 		</div>
 
-		<div class="container list_section">
+		<div id="list" class="container list_section">
 			<h4><img src="images/pen_icon.png">Title</h4>
 			<ol class="o_list">
 				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac neque bibendum, vehicula ipsum et, tincidunt</li>
@@ -160,6 +163,7 @@
 		</div>
 	</section>
 
+<script type="text/javascript" src="app/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="app/app.js"></script>	
 </body>
 </html>

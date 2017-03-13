@@ -42,8 +42,9 @@
 	width: 300px;
 	margin: 0 auto;
 }
+
 .container_slider {
-	width: 230px;
+	width: 72%;
 	margin: 0 auto;
 }
 
@@ -51,6 +52,11 @@
 	content: '';
 	display: table;
 	clear: both;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 /* Header styles - mobile */
@@ -62,6 +68,14 @@
 .slider {
 	height: 410px;
 	width: 100%;
+}
+
+#slideshow { 
+    position: relative; 
+}
+
+#slideshow > div { 
+    position: absolute; 
 }
 
 .slider h2 {
@@ -83,7 +97,6 @@
 	width: inherit;
 	height: 100%;
 	background-position: 45% center;
-	display: none;
 }
 
 .slide_3 {
@@ -91,16 +104,16 @@
 	width: inherit;
 	height: 100%;
 	background-position: 45% center;
-	display: none;
-
 }
 
 .options {
 	position: relative;
 	top: -200px;
+	opacity: 0.5;
 }
 
 .options img {
+	margin: 0 auto;
 	display: none;
 }
 
@@ -113,21 +126,21 @@
 	color: #fff;
 }
 
-.typo {
+.typo span {
 	background-color: rgb(195,51,51);
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 	margin-bottom: 20px;
 }
 
-.rwd {
+.rwd span {
 	background-color: rgb(66,142,158);
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 	margin-bottom: 20px;
 }
 
-.design {
+.design span {
 	background-color: rgb(80,139,97);
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 }
 
 /* Navigation styles - mobile */
@@ -150,9 +163,40 @@
 	cursor: pointer;
 }
 
-.menu {
-	display: none;
+.nav ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
 }
+
+.nav ul li {
+	display: inline-block;
+	position: relative;
+	/*top: 5px;*/
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	display: none;
+	background-color: #333333;
+	text-align: center;
+}
+
+.nav ul li :last-child {
+	padding-right: 0;
+}
+
+ .menu a {
+ 	text-decoration: none;
+ 	font-family: 'latolight', sans-serif;
+ 	font-size: 12px;
+ 	color: #000;
+ 	text-transform: uppercase;
+ 	color: #f3f3f3;
+ 	vertical-align: middle;
+ }
 
 /* Box_text - first section styles */
 .box_text_section {
@@ -246,7 +290,9 @@ div[class^="text_number"] {
 /* Second section styles - section images */
 .images_section {
 	width: 100%;
-	background-image: url(../images/bcg_mobile.png);
+	background-image: url(../images/bcg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -364,7 +410,7 @@ div[class^="medium_box"] {
 }
 .list_section h4 {
 	background-color: #7ec8ea;
-	font-family: "Lato Italic", sans-serif;
+	font-family: "latoitalic", sans-serif;
 	font-size: 38px;
 	line-height: 75px;
 	padding-left: 20px;
@@ -386,4 +432,26 @@ div[class^="medium_box"] {
 
 .o_list :last-child {
 	padding-bottom: 10px; 
+}
+
+
+/* Media queries */
+
+@media (min-width: 750px) {
+	.container {
+		width: 700px;
+	}
+
+	.container_slider {
+		width: 700px
+	}
+
+	.options>div {
+		display: inline-block;
+		width: 230px;
+	}
+
+	.options img {
+		display: block;
+	}
 }
