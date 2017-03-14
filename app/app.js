@@ -6,35 +6,30 @@ var slides = $("#slideshow > div");
 var span = $(".container_slider > div");
 $("#slideshow > div:gt(0)").hide();
 
-// setInterval(function() { 
-//   $('#slideshow > div:first')
-//     .fadeOut(1000)
-//     .next()
-//     .fadeIn(1000)
-//     .end()
-//     .appendTo('#slideshow');
-// },  3000);
+function slideShow () {
+	setInterval(function() { 
+	  	$('#slideshow > div:first')
+	    .fadeOut(1000)
+	    .next()
+	    .fadeIn(1000)
+	    .end()
+	    .appendTo('#slideshow');
+	},  3000);
+}
 
-
-console.log(slides,span);
-
+slideShow();
 
 
 // Mobile menu
 var menu_icon = $('.fa-bars');
 var list = $('.nav ul li');
-console.log(menu_icon, list);
-list.hide();
+
 	menu_icon.on('click', function(){
 		if(list.css('display') === 'none') {
-			list.show()
+			list.show();
 		} else
  			list.hide();
  	});
-
-
-
-
 
 
 // Scroll to
@@ -42,16 +37,14 @@ var menu = $('.menu');
 var link = menu.find('a')
 
 	link.on('click', function(e){
-		// console.log('click');
 		e.preventDefault();
 		var href = $(this).attr('href');
 		$('html, body').animate({scrollTop: $(href).offset().top}, 2000);
 	});
 
+
 // Sticky menu
-	var nav = $('nav');
-	var menu_list = nav.find('.menu');
-	var offset = menu_list.offset().top;
+	var offset = menu.offset().top;
 		console.log(offset);
 	
 
@@ -59,12 +52,12 @@ var link = menu.find('a')
 		var scroll = $(document).scrollTop();
 		if(offset < scroll){
 			list.show();
-			menu_list.addClass('sticky');
+			menu.addClass('sticky');
 		} else {
 			list.hide();
-			menu_list.removeClass('sticky');
+			menu.removeClass('sticky');
 		};
 	});
 
 
-})
+});
